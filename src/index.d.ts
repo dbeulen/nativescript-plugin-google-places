@@ -2,6 +2,9 @@ export interface Place {
     id: string,
     name: string,
     address: string,
+	phone: string,
+    latlong: Location,
+    viewport: Viewport, 
     attributions: string,
     types: string[]
 }

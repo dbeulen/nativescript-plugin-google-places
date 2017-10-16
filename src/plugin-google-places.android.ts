@@ -73,7 +73,10 @@ export function getPlacesById(ids: string[]): Promise<Place[]> {
                                 id: place.getId ? place.getId() : '',
                                 attributions: place.getAttributions ? place.getAttributions() : '',
                                 address: place.getAddress ? place.getAddress() : '',
-                                types: place.getPlaceTypes ? utils.ad.collections.stringSetToStringArray(place.getPlaceTypes()).map(type => placesStrings[type]) : []
+                                phone: place.getPhoneNumber ? place.getPhoneNumber() : '',
+                                latlng: place.getLatLng ? {latitude:place.getLatLng().latitude, longitude:place.getLatLng().longitude}:'',
+                                viewport: place.getViewport ? {southWest:{latitude:place.getViewport().southwest.latitude, longitude:place.getViewport().southwest.longitude },northEast:{latitude:place.getViewport().northeast.latitude, longitude:place.getViewport().northeast.longitude } }: '',
+                                types: place.getPlaceTypes ? utils.ad.collections.stringSetToStringArray(place.getPlaceTypes()).map(function (type) { return placesStrings[type]; }) : []
                             });
                         }
 

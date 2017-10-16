@@ -48,6 +48,9 @@ export function getPlacesById(ids: string[]): Promise<Place[]> {
                             name: place.name,
                             id: place.placeID,
                             address: place.formattedAddress,
+							phone: place.phoneNumber,
+                            latlng: place.coordinate,
+                            viewport: place.viewport,
                             attributions: place.attributions,
                             types: utils.ios.collections.nsArrayToJSArray(place.types)
                         });
