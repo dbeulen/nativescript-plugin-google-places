@@ -3,7 +3,7 @@ export interface Place {
     name: string,
     address: string,
 	phone: string,
-    latlong: Location,
+    latlng: Location,
     viewport: Viewport, 
     attributions: string,
     types: string[]
